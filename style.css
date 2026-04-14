@@ -1,0 +1,184 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: #0E2A26;
+    font-family: 'Jura', sans-serif;
+}
+
+header {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 40px;
+    background-color: #071614;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+h1 { margin: 0; color: #a2f0df; }
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover { background-color: #1a3b35; border-radius: 5px; }
+
+nav li {
+    border-right: 1px solid #1a3b35; /* Cria a linha vertical entre os itens */
+}
+
+nav li:last-child {
+    border-right: none; /* Remove a linha do último item para ficar simétrico */
+}
+
+section {
+    padding: 60px 40px; 
+}
+
+.container-secao {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+    border-bottom: 2px solid #1a3b35;
+    padding-bottom: 10px;
+}
+
+/* Apresentação */
+#sobre-mim {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    background: linear-gradient(to bottom, #0E2A26 0%, #0A211E 70%, #071614 100%);
+    min-height: 80vh;
+}
+
+#foto-perfil {
+    width: 300px;
+    height: auto;
+    border-radius: 25%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.texto {
+    max-width: 550px;
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+#contato-rapido { color: #a2f0df; font-weight: bold; }
+
+/* Boxes Gerais */
+.box-conteudo {
+    background-color: #071614;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Projetos */
+#projetos { background-color: #0A211E; }
+
+.projeto {
+    background-color: #071614;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    border-left: 5px solid #a2f0df;
+}
+
+.projeto h3 { font-size: 22px; color: #a2f0df; margin-top: 0; }
+.projeto p { font-size: 16px; margin-bottom: 10px; line-height: 1.5; }
+.projeto a { color: #a2f0df; text-decoration: none; font-weight: bold; }
+.projeto a:hover { text-decoration: underline; }
+
+/* Contatos */
+#contatos { text-align: center; background-color: #0E2A26; }
+
+.botoes-contato {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.botao-contato, .botao-curriculo {
+    background-color: #1a3b35;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.botao-contato:hover, .botao-curriculo:hover { background-color: #265047; }
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+    header { 
+        flex-direction: column; 
+        height: auto; 
+        padding: 20px; 
+    }
+    
+    nav ul { 
+        flex-direction: column; 
+        width: 100%; 
+        text-align: center; 
+    }
+    
+    /* Ajuste das linhas do menu no celular */
+    nav li { 
+        width: 100%;
+        border-right: none; /* Remove a linha vertical que aparece no PC */
+        border-bottom: 1px solid #1a3b35; /* Cria a linha horizontal */
+    }
+    
+    nav li:last-child { 
+        border-bottom: none; /* Tira a linha do último item */
+    }
+    
+    nav a {
+        padding: 15px; /* Aumenta a área de clique no celular */
+    }
+    
+    #sobre-mim { 
+        flex-direction: column; 
+        text-align: center; 
+        gap: 40px; 
+        padding-top: 40px; 
+    }
+    
+    /* Proteção para a foto não ser esmagada */
+    #foto-perfil { 
+        width: 250px; 
+        height: auto; 
+        object-fit: cover;
+        flex-shrink: 0; /* Impede que a tela amasse a foto */
+    }
+}
